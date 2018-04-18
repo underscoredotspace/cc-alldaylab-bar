@@ -8,7 +8,9 @@ class Pub
     @drinks = drinks
   end
 
-
+  def sell_a_drink(drink)
+    @till += drink.price
+  end
 
 
 end
