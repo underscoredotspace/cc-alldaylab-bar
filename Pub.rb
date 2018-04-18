@@ -8,8 +8,8 @@ class Pub
     @drinks = drinks
   end
 
-  def sell_a_drink(drink, age)
-    return false if age < 18
+  def sell_a_drink(drink, age, drunkenness)
+    return false if (age < 18 || drunkenness > 10)
     @till += drink.price
 
     return true

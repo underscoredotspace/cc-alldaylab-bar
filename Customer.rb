@@ -9,7 +9,7 @@ class Customer
   end
 
   def buy_a_drink(bar, beverage)
-    drink_sold = bar.sell_a_drink(beverage, @age)
+    drink_sold = bar.sell_a_drink(beverage, @age, @drunkenness)
     if drink_sold
       @wallet -= beverage.price
       @drunkenness += beverage.alcohol_level
