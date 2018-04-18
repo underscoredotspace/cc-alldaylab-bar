@@ -8,7 +8,7 @@ class Customer
   end
 
   def buy_a_drink(bar, beverage)
-    @wallet -= beverage.price
-    bar.sell_a_drink(beverage)  
+    drink_sold = bar.sell_a_drink(beverage, @age)
+    @wallet -= beverage.price if drink_sold
   end
 end
