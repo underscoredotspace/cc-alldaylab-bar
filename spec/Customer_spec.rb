@@ -6,7 +6,7 @@ require_relative('../Pub')
 
 class TestCustomer < MiniTest::Test
   def setup
-    @customer = Customer.new('Annie', 100)
+    @customer = Customer.new('Annie', 100, 35)
 
     @beer = Drink.new('Beer', 3)
     @wine = Drink.new('Wine', 4)
@@ -24,7 +24,11 @@ class TestCustomer < MiniTest::Test
     assert_equal(100, @customer.wallet)
   end
 
-  def test_customer_can_buy_drink_from_pub
+  def test_customer_has_age
+    assert_equal(35, @customer.age)
+  end
+
+  def test_customer_can_buy_rum_from_pub
     @customer.buy_a_drink(@pub, @rum)
     assert_equal(94, @customer.wallet)
     assert_equal(6, @pub.till)
