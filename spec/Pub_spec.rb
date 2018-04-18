@@ -1,10 +1,16 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../Pub')
+require_relative('../Drink')
 
 class TestPub < MiniTest::Test
   def setup
-    @pub = Pub.new("The Bear arms", 0)
+    beer = Drink.new('Beer', 3)
+    wine = Drink.new('Wine', 4)
+    rum = Drink.new('Rum', 6)
+    drinks = [beer, wine, rum]
+    
+    @pub = Pub.new("The Bear arms", 0, drinks)
   end
 
   def test_pub_has_name
@@ -15,7 +21,7 @@ class TestPub < MiniTest::Test
     assert_equal(0, @pub.till)
   end
 
-  def test_pub_has_no_drinks
-    assert_equal([], @pub.drinks)
+  def test_pub_has_three_drinks
+    assert_equal(3, @pub.drinks.count())
   end
 end
