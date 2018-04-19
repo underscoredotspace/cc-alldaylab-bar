@@ -1,5 +1,5 @@
-watch('^specs/.*\.rb$') { |m| ruby m[0] }
-watch('^(?!specs/)(.*)(?!_spec)\.rb$') { |m| ruby "specs/#{m[1]}_spec.rb" }
+watch('^spec/.*\.rb$') { |m| ruby m[0] }
+watch('^(?!spec/)(.*)(?!_spec)\.rb$') { |m| ruby "spec/#{m[1]}_spec.rb" }
 
 # --------------------------------------------------
 # Signal Handling
